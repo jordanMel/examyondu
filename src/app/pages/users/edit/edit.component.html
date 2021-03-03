@@ -1,0 +1,87 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-title>{{ header }}</ion-title>
+  </ion-toolbar>
+  <form [formGroup]="UserForm" (ngSubmit)="onSubmit()">
+
+    <ion-card>
+
+      <ion-item>
+        <ion-label position="floating">Firstname</ion-label>
+        <ion-input type="text" formControlName="fname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Lastname</ion-label>
+        <ion-input type="text" formControlName="lname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Age</ion-label>
+        <ion-input type="text" formControlName="age"></ion-input>
+      </ion-item>
+
+      <ion-label *ngIf="UserForm.get('age').hasError('pattern') && UserForm.get('email').touched">Numbers only
+      </ion-label>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-label *ngIf="UserForm.get('email').hasError('pattern') && UserForm.get('email').touched  ">Invalid Email
+      </ion-label>
+      <ion-item>
+        <ion-label position="floating">Mobile</ion-label>
+        <ion-input type="text" formControlName="mobile"></ion-input>
+      </ion-item>
+      <ion-label *ngIf="UserForm.get('mobile').hasError('pattern') && UserForm.get('email').touched">Numbers only
+      </ion-label>
+
+    </ion-card>
+
+    <ion-card formGroupName="address">
+      <ion-list-header>
+        Address
+      </ion-list-header>
+      <ion-item>
+        <ion-label position="floating">Street</ion-label>
+        <ion-input type="text" formControlName="street"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Barangay</ion-label>
+        <ion-input type="text" formControlName="barangay"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">City</ion-label>
+        <ion-input type="text" formControlName="city"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Province</ion-label>
+        <ion-input type="text" formControlName="province"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Country</ion-label>
+        <ion-input type="text" formControlName="country"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Zip Code</ion-label>
+        <ion-input type="text" formControlName="zipcode"></ion-input>
+      </ion-item>
+
+    </ion-card>
+
+
+    <ion-button type="submit" expand="full"> Submit</ion-button>
+
+
+
+
+
+
+  </form>
+</ion-content>

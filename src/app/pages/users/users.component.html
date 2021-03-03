@@ -1,0 +1,34 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons  slot="secondary">
+      <ion-button routerLink="/user/add/0">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item class="list-item" *ngFor="let user of users">
+      <ion-label> {{user.fname}}  {{ user.lname }}          </ion-label>
+      <ion-button [routerLink]="['user/edit',user.id]" >
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="danger"  (click)="onDelete(user.id )">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+
+
