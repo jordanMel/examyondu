@@ -21,20 +21,23 @@
         <ion-input type="text" formControlName="age"></ion-input>
       </ion-item>
 
-      <ion-label *ngIf="UserForm.get('age').hasError('pattern') && UserForm.get('age').touched">Numbers only
+      <ion-label *ngIf="UserForm.get('age').hasError('pattern') && UserForm.get('age').touched">
+        Numbers only
       </ion-label>
 
       <ion-item>
         <ion-label position="floating">Email</ion-label>
         <ion-input type="text" formControlName="email"></ion-input>
       </ion-item>
-      <ion-label *ngIf="UserForm.get('email').hasError('pattern') && UserForm.get('email').touched  ">Invalid Email
+      <ion-label *ngIf="UserForm.get('email').hasError('pattern') && UserForm.get('email').touched  ">
+        Invalid Email
       </ion-label>
       <ion-item>
         <ion-label position="floating">Mobile</ion-label>
         <ion-input type="text" formControlName="mobile"></ion-input>
       </ion-item>
-      <ion-label *ngIf="UserForm.get('mobile').hasError('pattern') && UserForm.get('mobile').touched">Numbers only
+      <ion-label *ngIf="UserForm.get('mobile').hasError('pattern') && UserForm.get('mobile').touched">
+        Numbers only
       </ion-label>
 
     </ion-card>
